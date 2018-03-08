@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        function btn2() {
+
+            $.ajax({
+                //提交方式
+                type: "get",
+                //提交的Action
+                url: '../selectAllUser',
+                data: {
+                    //提交的数据
+                },
+                //返回数据类型
+                dataType: "json",
+                success: function (data) {
+                    // alert(data);
+                    var data2 = eval(data);
+
+                    $("#main").empty();
+
+                   var html = '<table border=1>';
+                    html +=
+                        "<thead>"+
+                        "<tr> " +
+                        "<th>id</th> " +
+                        "<th>姓名</th> " +
+                        "<th>性别</th>" +
+                        "<th>年龄</th>" +
+                        "<th>账号</th>" +
+                        "</tr>"+
+                    "</thead>";
+                    for (var i in data2) {
+                        html += '<tr>'
+                        html += '<td>' + data2[i].id + '</td>';
+                        html += '<td>' + data2[i].name + '</td>';
+                        html += '<td>' + data2[i].sex + '</td>';
+                        html += '<td>' + data2[i].age + '</td>';
+                        html += '<td>' + data2[i].account + '</td>';
+                        html += '</tr>'
+
+                    }
+                    html += '</table>';
+                    $("#main").append(html);
+                },
+
+                error: function (data) {
+                    //失败的话
+                    alert("fail");
+                },
+            });
+
+        }
+    </script>
+</head>
+<body>
+
+<h1>成品</h1>
+
+<button onclick="btn2()">显示所有用户</button>
+
+<div class="main" name="main" id="main">
+
+</div>
+
+</body>
+</html>

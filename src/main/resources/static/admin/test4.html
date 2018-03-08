@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+<script type="text/template" id="template">
+    <div class='message' id='message'>第 {{id}} 位用户:
+        <span>{{content}}</span>
+        <p><a href='./{{imgsrc}}' title='点击查看原图'><img src='./{{thumbsrc}}'></a></p><br>{{pubtime}}
+    </div>
+</script>
+<script>
+    (function ($) {
+        var template = $('#template').html();
+
+        function get_data() {
+            $.ajax({
+                url: '../getUserByName?name=董能宇',
+                dataType: 'json',
+                success: function (data) {
+                    for (var i = 0; i < data.length; ++i) {
+                        var tmp = data[i];
+                        // 循环输出，用变量替换template中的{{变量}}
+                    }
+                }
+            });
+        }
+
+        get_data();
+    })(jQuery);
+</script>
+
+</body>
+</html>

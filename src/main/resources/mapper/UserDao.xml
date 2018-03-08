@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongnengyu.mybatis_test2.dao.UserDao">
+
+    <select id="queryUser" resultType="User">
+        SELECT
+        id,
+        name,
+        sex,
+        age,
+        account
+        FROM
+        user
+        ORDER BY
+        id ASC
+    </select>
+
+    <select id="getUserById" resultType="User">
+        SELECT
+        ID as id,
+        NAME as name,
+        SEX as sex,
+        AGE as age,
+        account as account
+        FROM user
+        WHERE ID = #{id}
+    </select>
+    <select id="getUserByName" resultType="User">
+        SELECT
+        ID as id,
+        NAME as name,
+        SEX as sex,
+        AGE as age,
+        account as account
+        FROM user
+        WHERE NAME = #{name}
+    </select>
+
+    <update id="updateUser">
+        UPDATE user
+        SET NAME = #{user.name},
+        SEX = #{user.sex},
+        AGE = #{user.age}
+        WHERE ID = #{user.id}
+    </update>
+    <insert id="insertUser">
+        INSERT INTO
+        user(name, sex, age,account)
+        VALUES (
+        #{user.name},
+        #{user.sex},
+        #{user.age},
+        #{user.account}
+        )
+    </insert>
+    <delete id="deleteUserById">
+        DELETE user WHERE ID = #{id}
+    </delete>
+
+</mapper>

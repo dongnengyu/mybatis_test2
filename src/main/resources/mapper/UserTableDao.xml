@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongnengyu.mybatis_test2.dao.UserTableDao">
+
+    <select id="queryUserTable" resultType="UserTable">
+        SELECT
+        id,
+        account,
+        password
+        FROM
+        user_table
+        ORDER BY
+        id ASC
+    </select>
+
+    <select id="getUserTableById" resultType="UserTable">
+        SELECT
+        ID as id,
+        account as account,
+        password as password
+        FROM user_table
+        WHERE ID = #{id}
+    </select>
+    <select id="getUserTableByAccount" resultType="UserTable">
+        SELECT
+        ID as id,
+        account as account,
+        password as password
+        FROM user_table
+        WHERE account = #{account}
+    </select>
+
+    <update id="updateUserTable">
+        UPDATE user_table
+        SET account = #{userTable.account},
+        password = #{userTable.password},
+        WHERE ID = #{userTable.id}
+    </update>
+    <insert id="insertUserTable">
+        INSERT INTO
+        user_table (id, account, password)
+        VALUES (
+        #{userTable.id},
+        #{userTable.account},
+        #{userTable.password}
+        )
+    </insert>
+    <delete id="deleteUserTableById">
+        DELETE userTable WHERE ID = #{id}
+    </delete>
+
+</mapper>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    function test(){
+
+
+        $(function() {
+            var x = document.getElementById("search").value;
+            $.ajax({
+                url: '../getUserByName?name='+'董能宇',
+                dataType: 'json',
+                success: function(data) {
+                    var items = [];
+                    $.each(data, function(key, val) {
+                        items.push('<li id="' + key + '">' + val + '</li>');
+                    });
+                    $('<ul/>', {
+                        'class': 'list',
+                        html: items.join('')
+                    }).appendTo('body');
+                },
+                statusCode: {
+                    404: function() {
+                        alert("没有找到相关文件~~");
+                    }
+                }
+            });
+        });
+
+    }
+</script>
+<body>
+
+测试从后台接受json<br>
+<form>
+    姓名<input type="text" id="search" value="" > </br>
+</form>
+
+<input type="submit" onclick="test()"></input>
+
+
+</body>
+</html>
