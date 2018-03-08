@@ -40,9 +40,8 @@
     </update>
     <insert id="insertUserTable">
         INSERT INTO
-        user_table (id, account, password)
+        user_table (account, password)
         VALUES (
-        #{userTable.id},
         #{userTable.account},
         #{userTable.password}
         )

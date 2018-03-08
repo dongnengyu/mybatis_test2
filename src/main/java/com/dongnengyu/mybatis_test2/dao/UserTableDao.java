@@ -20,9 +20,9 @@ public interface UserTableDao {
 
     UserTable getUserTableByAccount(@Param("account") String account);
 
-    int updateUserTable(@Param("userTableDao") UserTableDao userTableDao);
+    int updateUserTable(@Param("userTable") UserTable userTable);
 
-    int insertUserTable(@Param("user") UserTableDao userTableDao);
+    int insertUserTable(@Param("userTable") UserTable userTable);
 
     int deleteUserTableById(@Param("id") int id);
 }

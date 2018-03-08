@@ -9,23 +9,24 @@
 
 <h1>用户注册</h1>
 
-<form>
-    账号<input type="text" id="account" value=""> </br>
-    密码<input type="text" id="password" value=""> </br>
-    <button type="submit" onclick="insertUserTable()">注册</button>
+<form action="/getUserByAccount" method="post">
+    账号<input type="text" id="account" name="account" value="545"> </br>
+    <!--密码<input type="text" id="password" value=""> </br>-->
+
+    <input type="submit">登录
 </form>
 
 </body>
 <script>
-    function insertUserTable() {
+    function getUserByAccount() {
 
         var json = {};
 
         // json.sex =  document.getElementsByName("sex").value; 这条不能获取值
         json.account = document.getElementById("account").value;
-        json.password = document.getElementById("password").value;
+        // json.password = document.getElementById("password").value;
         $.ajax({
-            url: "/insertUserTable",
+            url: "/getUserByAccount",
             data: JSON.stringify(json),
             method: "post",
             contentType: 'application/json;charset=UTF-8'

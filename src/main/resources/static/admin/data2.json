@@ -1,21 +1,23 @@
 [
-  {"version":"1.2.1",
-  "333":"44",
-  "fruit":[
-{"apple":"one"},
-{"banana":"two"},
-{"grap":"three"},
-{"orange":"four"}
-]
-}  ,
-  {"version":"1.2.3",
-  "333":"44",
-  "fruit":[
-{"apple":"one"},
-{"banana":"two"},
-{"grap":"three"},
-{"orange":"four"}
-]
-}
-
+  {
+    "id": 1,
+    "name": "董能宇",
+    "sex": "男",
+    "age": 20,
+    "account": "441224199702281114"
+  },
+  {
+    "id": 2,
+    "name": "潘老四",
+    "sex": "女",
+    "age": 21,
+    "account": "441227199702282226"
+  },
+  {
+    "id": 12,
+    "name": "sdfsd",
+    "sex": "女",
+    "age": 30,
+    "account": "sfds"
+  }
 ]
