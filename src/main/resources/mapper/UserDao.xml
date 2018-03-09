@@ -55,8 +55,21 @@
         #{user.account}
         )
     </insert>
+
+    <insert id="insertUserOnlyAccount">
+        INSERT INTO
+        user(account)
+        VALUES (
+
+        #{account}
+        )
+    </insert>
+
+
     <delete id="deleteUserById">
         DELETE user WHERE ID = #{id}
     </delete>
+
+
 
 </mapper>

@@ -25,13 +25,22 @@
         json.account = document.getElementById("account").value;
         json.password = document.getElementById("password").value;
         $.ajax({
-            url: "/insertUserTable",
+            url: "/register",
             data: JSON.stringify(json),
             method: "post",
-            contentType: 'application/json;charset=UTF-8'
+            contentType: 'application/json;charset=UTF-8',
 
+
+            success: function (data) {
+                if(data.register == "true"){
+                    alert("注册成功");
+                }
+
+                // alert();
+                // eval(data);
+                // alert(data.register);
+            }
         });
-
 
     }
 </script>

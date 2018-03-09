@@ -4,6 +4,7 @@ package com.dongnengyu.mybatis_test2.controller;
 import com.dongnengyu.mybatis_test2.entity.UserTable;
 import com.dongnengyu.mybatis_test2.dao.UserTableDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

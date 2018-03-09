@@ -25,4 +25,6 @@ public interface UserDao {
     int insertUser(@Param("user") User user);
 
     int deleteUserById(@Param("id") int id);
+
+    int insertUserOnlyAccount(@Param("account") String account);
 }
