@@ -9,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.swing.plaf.PanelUI;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * xiaomu (dongnengyu@gmail.com)
@@ -49,6 +51,7 @@ public class UserController {
 
     @RequestMapping(value = "/selectAllUser" ,method = RequestMethod.GET)
     public List queryUserr(){
+
         return userDao.queryUser();
     }
 

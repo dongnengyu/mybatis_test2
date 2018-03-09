@@ -26,6 +26,8 @@ public class RegisterService {
     @Autowired
     private UserDao userDao;
 
+
+
     public boolean register(UserTable userTable) {
 
         String account = userTable.getAccount();

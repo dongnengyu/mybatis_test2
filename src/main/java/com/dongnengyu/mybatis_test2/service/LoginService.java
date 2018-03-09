@@ -24,11 +24,7 @@ public class LoginService {
         String account = userTable.getAccount();
         String password = userTable.getPassword();
 
-        System.out.println(userTableDao.getUserTableByAccount(account));
-
-
-
-            //首先判断账号是否存在于数据库，然后再判断密码
+        //首先判断账号是否存在于数据库，然后再判断密码
         if(userTableDao.getUserTableByAccount(account)==null){
             System.out.println("账号："+account+"不存在，登录失败");
             return false;

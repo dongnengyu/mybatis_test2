@@ -7,18 +7,18 @@
         function btn2() {
 
             $.ajax({
-                //提交方式
-                type: "get",
-                //提交的Action
-                url: 'data2.json',
-                data: {
-                    //提交的数据
-                },
-                //返回数据类型
-                dataType: "json",
-                success: function (data) {
-                    // alert(data);
-                    var data2 = eval(data);
+                        //提交方式
+                        type: "get",
+                        //提交的Action
+                        url: '../selectAllUser',
+                        data: {
+                            //提交的数据
+                        },
+                        //返回数据类型
+                        dataType: "json",
+                        success: function (data) {
+                            // alert(data);
+                            var data2 = eval(data);
 
                     $("#main").empty();
 

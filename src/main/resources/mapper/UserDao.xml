@@ -42,8 +42,9 @@
         UPDATE user
         SET NAME = #{user.name},
         SEX = #{user.sex},
-        AGE = #{user.age}
-        WHERE ID = #{user.id}
+        AGE = #{user.age},
+        account=#{user.account}
+        WHERE account = #{user.account}
     </update>
     <insert id="insertUser">
         INSERT INTO
